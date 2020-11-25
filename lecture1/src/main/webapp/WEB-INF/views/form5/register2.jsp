@@ -22,37 +22,37 @@
   <h1>회원가입</h1>
   <div>
     <label>사용자 아이디</label>
-    <input type="text" name="userid" value="${ userid }" />
+    <input type="text" class="text" name="userid" value="${ member.userid }" />
   </div>
   <div>
     <label>이름</label>
-    <input type="text" name="name" value="${ name }" />
+    <input type="text" class="text" name="name" value="${ member.name }" />
   </div>
   <div>
     <label>비밀번호1</label>
-    <input type="password" name="password1" />
+    <input type="password" class="text" name="password1" />
   </div>
   <div>
     <label>비밀번호2</label>
-    <input type="password" name="password2" />
+    <input type="password" class="text" name="password2" />
   </div>
   <div>
     <label>이메일</label>
-    <input type="email" name="email" value="${ email }" />
+    <input type="email" class="text" name="email" value="${ member.email }" />
   </div>
   <div>
     <label>학과</label>
     <select name="departmentId">
-      <option value="1" ${ departmentId == 1 ? "selected" : "" }>소프트웨어공학과</option>
-      <option value="2" ${ departmentId == 2 ? "selected" : "" }>컴퓨터공학과</option>
-      <option value="3" ${ departmentId == 3 ? "selected" : "" }>정보통신공학과</option>
-      <option value="4" ${ departmentId == 4 ? "selected" : "" }>글로컬IT공학과</option>
+      <option value="1" ${ member.departmentId == 1 ? "selected" : "" }>소프트웨어공학과</option>
+      <option value="2" ${ member.departmentId == 2 ? "selected" : "" }>컴퓨터공학과</option>
+      <option value="3" ${ member.departmentId == 3 ? "selected" : "" }>정보통신공학과</option>
+      <option value="4" ${ member.departmentId == 4 ? "selected" : "" }>글로컬IT공학과</option>
     </select>
   </div>
   <button type="submit" class="btn">회원가입</button>
 </form>
 
-<c:if test="${ not empty errorMsg }"> <!-- 없으면 아래 태그를 출력하지 않음 -->
+<c:if test="${ not empty errorMsg }">
   <div class="error">${ errorMsg }</div>
 </c:if>
 </div>
